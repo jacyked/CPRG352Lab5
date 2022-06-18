@@ -29,7 +29,7 @@ public class HomeServlet extends HttpServlet {
         Object un = session.getAttribute("username");
         
         if (un == null || un.equals("")){
-            System.out.println("test Obj");
+            
             response.sendRedirect("login");
             return;
         }
