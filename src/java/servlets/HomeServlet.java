@@ -26,7 +26,13 @@ public class HomeServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
         String username = request.getParameter("username");
+        Object un = session.getAttribute("username");
         
+        if (un == null || un.equals("")){
+            System.out.println("test Obj");
+            response.sendRedirect("login");
+            return;
+        }
         //if logout button clicked
         String logout = request.getParameter("logout");
         if(logout != null && !logout.equals("")){
